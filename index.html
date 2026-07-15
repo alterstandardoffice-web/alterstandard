@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Alter Standard — You deserve it.</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <style>
 :root{--ink:#111;--muted:#6b6b6b;--line:#eaeaea}
 *{box-sizing:border-box}
@@ -29,6 +30,20 @@ nav a:hover{opacity:.6}
 footer{border-top:1px solid var(--line);padding:40px 0 80px;text-align:center;color:var(--muted);font-size:12px}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:48px}}
 @media(max-width:520px){.grid{grid-template-columns:1fr}.hero{padding:80px 0 40px}}
+  .swiper {
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 40px; /* 矢印ボタンがはみ出さないように左右に余白を作ります */
+  }
+  .swiper-slide {
+    text-align: center;
+  }
+  .swiper-slide .card {
+    margin: 0 auto;
+  }
+  .swiper-button-next, .swiper-button-prev {
+    color: var(--ink); /* サイトのメインの黒色に合わせます */
+  }
 </style>
 </head>
 <body>
@@ -41,6 +56,50 @@ footer{border-top:1px solid var(--line);padding:40px 0 80px;text-align:center;co
 <a href="https://alterstandard.etsy.com" target="_blank">Shop</a>
 </nav>
 </header>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      
+      <!-- スライド1：キャップ -->
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="thumb"><img src="all-over-print-bandana-white-l-front-6a2d4864_100x_100x.png" alt="Embroidered Cap"></div>
+          <h3>Embroidered Cap</h3>
+          <p>Cap</p>
+        </div>
+      </div>
+
+      <!-- スライド2：Bandana -->
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="thumb"><img src="Bandana Floral.png.png" alt="Botanical Bandana"></div>
+          <h3>Botanical Bandana</h3>
+          <p>Bandana</p>
+        </div>
+      </div>
+
+      <!-- スライド3：Tシャツ -->
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="thumb"><img src="MARQUE Espresso T-shirt.png" alt="Collingwood T-shirt"></div>
+          <h3>Collingwood T-shirt</h3>
+          <p>T-shirt</p>
+        </div>
+      </div>
+
+      <!-- スライド4：壁紙 -->
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="thumb"><img src="2026wallpaper.jpg" alt="Apple Watch Wallpapers"></div>
+          <h3>Apple Watch Wallpapers</h3>
+          <p>Digital</p>
+        </div>
+      </div>
+
+    </div>
+    <!-- 左右の矢印ボタン -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
 
 <div class="hero">
 <h1>You deserve it.</h1>
@@ -71,5 +130,21 @@ footer{border-top:1px solid var(--line);padding:40px 0 80px;text-align:center;co
 <a href="about.html" style="color:inherit">Our Story</a> · <a href="mailto:alterstandard.office@gmail.com" style="color:inherit">Contact</a>
 </footer>
 </div>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      slidesPerView: 1,      // スマホでは1枚
+      spaceBetween: 20,      // 画像の隙間
+      loop: true,            // ループさせる
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        640: { slidesPerView: 2 },  // タブレットでは2枚
+        1024: { slidesPerView: 4 } // パソコンでは4枚
+      }
+    });
+  </script>
 </body>
 </html>
