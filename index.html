@@ -128,7 +128,86 @@ footer{border-top:1px solid var(--line);padding:40px 0 80px;text-align:center;co
 <h1>You deserve it.</h1>
 <div class="sub-title"style="font-size: 14px; color: #7f8c8d; letter-spacing: 1px; margin-top: 10px;">Redefining the standard of daily comfort. </div>
 </div>
+<div class="todays-sign-widget" style="text-align: center; padding: 25px; border: 1px solid #f0e6dc; border-radius: 16px; max-width: 480px; margin: 20px auto; background: #fdfbf7; box-shadow: 0 4px 15px rgba(224, 122, 95, 0.08);">
+    <h3 style="color: #d46a48; font-family: serif; margin-bottom: 5px; font-size: 1.3rem;">Today's Sign 📔🧡</h3>
+    <p style="font-size: 0.85rem; color: #888; margin-bottom: 15px;">今のあなたに必要なメッセージを受け取る</p>
+    
+    <div id="card-display" style="min-height: 120px; display: flex; flex-direction: column; align-items: center; justify-content: center; margin: 15px 0; color: #444; background: #fff; border: 1px dashed #e6d7cc; border-radius: 10px; padding: 20px; transition: opacity 0.3s ease;">
+        <span style="font-size: 1rem; line-height: 1.6; margin-bottom: 8px;">ボタンを押して今日のサインを引く</span>
+        <span style="font-size: 0.85rem; color: #888; font-style: italic;">Click the button to draw your sign</span>
+    </div>
+    
+    <button id="draw-btn" style="background: #e07a5f; color: white; border: none; padding: 12px 28px; border-radius: 25px; cursor: pointer; font-size: 0.95rem; font-weight: bold; box-shadow: 0 2px 8px rgba(224, 122, 95, 0.3); transition: background 0.2s;">今日のサインを引く / Draw a Sign</button>
+</div>
 
+<script>
+const signs = [
+    {
+        ja: "従うべきサインがある。あなたのサインを、次へ手渡そう。",
+        en: "Some signs, you just follow. Pass yours on."
+    },
+    {
+        ja: "始めること、そのものがすでに素晴らしい功績。",
+        en: "The courage to begin is an achievement in itself."
+    },
+    {
+        ja: "不安でいい。あなたは今、必要な場所にちゃんといる。",
+        en: "It's okay to feel uncertain. You are right where you need to be."
+    },
+    {
+        ja: "すべての出会いは、あなた自身へと導くサイン。",
+        en: "Every encounter is a sign leading you home to yourself."
+    },
+    {
+        ja: "進むスピードは競うものじゃない。自分の静かなリズムを大切に。",
+        en: "Progress isn't a race. Honor your own quiet rhythm."
+    },
+    {
+        ja: "今の暮らしのために必死で戦ってくれた、過去の自分にありがとう。",
+        en: "Thank the past self who fought so hard for the life you have now."
+    },
+    {
+        ja: "直感のささやきを信じて。行き先はちゃんと知っているから。",
+        en: "Trust the whispers of your intuition. They know the way."
+    },
+    {
+        ja: "今日の小さな一歩が、明日の美しい景色をつくる。",
+        en: "Small steps today build the beautiful scenery of tomorrow."
+    },
+    {
+        ja: "あなたの家は、大切に紡いできた人生のキャンバス。",
+        en: "Your home is a canvas of the life you've built with care."
+    },
+    {
+        ja: "素晴らしい未来は、今この瞬間から静かに形づくられている。",
+        en: "A wonderful future is quietly taking shape, starting right now."
+    },
+    {
+        ja: "遠回りに思える道こそ、一番魔法に満ちた小道だったりする。",
+        en: "What seems like a detour is often the most magical path."
+    },
+    {
+        ja: "この印刷の回だけがオレンジだったように、あなたの物語はあなただけのもの。",
+        en: "Only this print run is orange. Only your story is yours."
+    }
+];
+
+document.getElementById('draw-btn').addEventListener('click', function() {
+    const randomIndex = Math.floor(Math.random() * signs.length);
+    const selectedSign = signs[randomIndex];
+    const cardDisplay = document.getElementById('card-display');
+    
+    // ふわっと切り替わる演出
+    cardDisplay.style.opacity = 0;
+    setTimeout(() => {
+        cardDisplay.innerHTML = `
+            <span style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 8px; color: #2c2c2c; font-weight: 500;">${selectedSign.ja}</span>
+            <span style="font-size: 0.85rem; color: #888; font-style: italic;">${selectedSign.en}</span>
+        `;
+        cardDisplay.style.opacity = 1;
+    }, 150);
+});
+</script>
 <div class="grid">
 <div class="card"><a href="https://alterstandard.etsy.com/listing/4483121134" target="_blank"><div class="thumb"><img src="2026wallpaper.jpg" alt="2026 Wallpaper"></div><h3>2026 Zodiac Hose 4Wallpapers</h3><p>Digital</p></a></div>
 <div class="card"><a href="https://alterstandard.etsy.com/listing/4485973271" target="_blank"><div class="thumb"><img src="smartwatch faces.png" alt="Apple Watch"></div><h3>Apple Watch Wallpapers</h3><p>6-Pack/Digital</p></a></div>
